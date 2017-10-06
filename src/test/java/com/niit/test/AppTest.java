@@ -1,23 +1,17 @@
 package com.niit.test;
-import static org.junit.Assert.assertEquals;
-
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.niit.dao.UserDAO;
 import com.niit.hibernateConfig.DataBaseConfig;
-import com.niit.model.User;
 
 @ComponentScan("com.spring.model")
 public class AppTest {
 
 
-	@Autowired
-	private static User user;
-
+	@SuppressWarnings("unused")
 	@Autowired
 	private static UserDAO userDAO;
 	

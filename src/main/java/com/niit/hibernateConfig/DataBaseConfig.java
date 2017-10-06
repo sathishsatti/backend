@@ -9,6 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.dao.*;
+import com.niit.daoimpl.UserDAOImpl;
 
 
 @Configuration

@@ -1,4 +1,8 @@
 D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\dao\UserDAO.java
 D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\dao\UserDAOImpl.java
 D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\hibernateConfig\DataBaseConfig.java
+D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\dao\categoryDaoImpl.java
+D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\dao\categoryDao.java
+D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\config\DBconfig.java
 D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\model\User.java
+D:\JAVA SOFT\java programs\backend\src\main\java\com\niit\model\category.java
