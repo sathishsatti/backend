@@ -3,6 +3,7 @@ package com.niit.config;
 import javax.sql.DataSource;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,27 +29,28 @@ public class DBconfig
 		return driverMgrDataSource;
 	}
 		//SessionFactory bean created
-		
+		@Autowired
 		@Bean(name="SessionFactory")
-		public SessionFactory getessionFactory()
+		public SessionFactory getSessionFactory()
 		{
 			Properties hibernateProperties=new Properties();
 			hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
-			hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect");
+			hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 			
 			LocalSessionFactoryBuilder localSessionFacBuilder=new LocalSessionFactoryBuilder(getH2DataSource());
 			localSessionFacBuilder.addProperties(hibernateProperties);
+			localSessionFacBuilder.scanPackages("com.niit.*");
 			SessionFactory SessionFactory=localSessionFacBuilder.buildSessionFactory();
 			return SessionFactory;
 		}
 
 	
 		//TRANSACTION BEAN OBJECT
-		
+		@Autowired
 		@Bean
-		public HibernateTransactionManager getHibernateTransactionManager(SessionFactory SessionFactory) 
+		public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory) 
 		{
-			HibernateTransactionManager hibernateTranMgr=new HibernateTransactionManager();
+			HibernateTransactionManager hibernateTranMgr=new HibernateTransactionManager(sessionFactory);
 					return hibernateTranMgr;
 		}
 		

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.niit.config.DBconfig;
 import com.niit.dao.UserDAO;
-import com.niit.hibernateConfig.DataBaseConfig;
 
 @ComponentScan("com.spring.model")
 public class AppTest {
@@ -22,7 +22,7 @@ public static void initialize()
 {
 	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 	context.scan("com.niit.*");
-	context.register(DataBaseConfig.class);
+	context.register(DBconfig.class);
 	context.refresh();
 	
 ///	user = (User) context.getBean("user");

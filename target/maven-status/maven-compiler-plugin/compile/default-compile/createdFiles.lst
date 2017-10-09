@@ -1,8 +1,13 @@
 com\niit\config\DBconfig.class
 com\niit\dao\UserDAO.class
 com\niit\model\User.class
-com\niit\hibernateConfig\DataBaseConfig.class
-com\niit\dao\categoryDao.class
-com\niit\dao\UserDAOImpl.class
-com\niit\dao\categoryDaoImpl.class
+com\niit\model\Product.class
+com\niit\model\Supplier.class
+com\niit\dao\CategoryDao.class
 com\niit\model\category.class
+com\niit\daoimpl\SupplierDaoimpl.class
+com\niit\dao\SupplierDao.class
+com\niit\daoimpl\CategoryDaoImpl.class
+com\niit\dao\ProductDao.class
+com\niit\daoimpl\UserDAOImpl.class
+com\niit\daoimpl\ProductDaoImpl.class

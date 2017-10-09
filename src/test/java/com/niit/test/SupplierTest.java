@@ -27,29 +27,7 @@ public class SupplierTest
 		supplierDao=(SupplierDao)ConfigApplnContext.getBean("SupplierDao");
 	}
 
-	@Test
-	public void addcategoryTest()
-	{
-		Supplier supplier=new Supplier();
-		supplier.setSupId(1001);
-		supplier.setSupname("mobile");
-		supplier.setSupaddress("smart mobile");
-		
-		supplierDao.addSupplier(supplier);
-	}
 	
-	
-	
-	@Test
-	public void updatesupplierTest()
-	{
-		Supplier supplier=new Supplier();
-		supplier.setSupId(1001);
-		supplier.setSupname("mobile");
-		supplier.setSupaddress("smart mobile");
-		
-		supplierDao.addSupplier(supplier);
-	}
 
 	
 	@Test
