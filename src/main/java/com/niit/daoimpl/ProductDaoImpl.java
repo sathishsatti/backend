@@ -46,8 +46,9 @@ public class ProductDaoImpl implements ProductDao
 	}
 
 	@Override
-	public List<Product> retrieveProduct() {
-		// TODO Auto-generated method stub
+	public List<Product> retrieveProduct()
+	{
+		
 		return null;
 	}
 

@@ -1,2 +1,4 @@
-com\niit\test\categoryTest.class
+com\niit\test\CategoryTest.class
+com\niit\test\SupplierTest.class
 com\niit\test\AppTest.class
+com\niit\test\ProductTest.class

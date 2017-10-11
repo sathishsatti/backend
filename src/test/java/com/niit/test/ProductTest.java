@@ -3,7 +3,8 @@ package com.niit.test;
 	import static org.junit.Assert.*;
 
 	import org.junit.BeforeClass;
-	import org.junit.Test;
+import org.junit.Ignore;
+import org.junit.Test;
 	import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 	import org.springframework.transaction.annotation.Transactional;
 	import com.niit.dao.ProductDao;
@@ -13,6 +14,7 @@ import com.niit.model.Product;
 	public class ProductTest
 
 	{
+		
 		private static ProductDao productDao;
 		@SuppressWarnings("resource")
 		@BeforeClass
@@ -30,7 +32,7 @@ import com.niit.model.Product;
 		public void addProductTest()
 		{
 			 Product product= new Product();
-			 product.setProductId(1001);
+			 product.setProductId(1002);
 			 product.setProductName("sa");
 			 product.setProductDesc("this");
 			 product.setPrice(2000);
@@ -40,5 +42,5 @@ import com.niit.model.Product;
 			 assertTrue("problem in insertion",productDao.addProduct(product));
 		}
 		
+	
 	}
-

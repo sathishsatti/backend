@@ -9,7 +9,7 @@ import com.niit.dao.UserDAO;
 
 @ComponentScan("com.spring.model")
 public class AppTest {
-
+/*
 
 	@SuppressWarnings("unused")
 	@Autowired
