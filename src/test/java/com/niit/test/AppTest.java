@@ -2,6 +2,7 @@ package com.niit.test;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 //import org.junit.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,7 +14,7 @@ import com.niit.model.User;
 
 @ComponentScan("com.spring.model")
 
-
+@Ignore
 public class AppTest {
 
 

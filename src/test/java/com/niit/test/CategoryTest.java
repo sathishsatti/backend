@@ -2,6 +2,7 @@
 package com.niit.test;
  
 import static org.junit.Assert.*;
+
  
 import java.util.List;
  
@@ -13,6 +14,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
+
+@Ignore
 public class CategoryTest 
 {
 	

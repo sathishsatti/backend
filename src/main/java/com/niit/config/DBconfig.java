@@ -12,9 +12,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.dao.CategoryDAO;
+
 import com.niit.dao.UserDAO;
-import com.niit.daoimpl.CategoryDAOImpl;
+
 import com.niit.daoimpl.UserDAOImpl;
 
 
@@ -73,13 +73,7 @@ public class DBconfig
 
 		return new UserDAOImpl(sessionFactory);
 	}
-	@Autowired
-	@Bean(name="categoryDAO")
-	public CategoryDAO getCategory(SessionFactory sessionFactory)
-	{
-		return new CategoryDAOImpl(sessionFactory);
-		
-	}
+	
 	
 
 	}

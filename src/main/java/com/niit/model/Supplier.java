@@ -15,15 +15,15 @@ public int getSupId() {
 public void setSupId(int supId) {
 	this.supId = supId;
 }
-public String getSupname() {
-	return supname;
+public String getSupName() {
+	return supName;
 }
-public void setSupname(String supname) {
-	this.supname = supname;
+public void setSupame(String supName) {
+	this.supName = supName;
 }
 
 
-String supname,supAddress;
+String supName,supAddress;
 public String getSupAddress() {
 	return supAddress;
 }
