@@ -10,11 +10,10 @@ import org.junit.Test;
 	import com.niit.dao.ProductDao;
 import com.niit.model.Product;
 
-
 	public class ProductTest
 
 	{
-		
+		/*
 		private static ProductDao productDao;
 		@SuppressWarnings("resource")
 		@BeforeClass
@@ -32,15 +31,15 @@ import com.niit.model.Product;
 		public void addProductTest()
 		{
 			 Product product= new Product();
-			 product.setProductId(1002);
+			 product.setProductId(1003);
 			 product.setProductName("sa");
 			 product.setProductDesc("this");
 			 product.setPrice(2000);
 			 product.setStock(25);
-			 product.setCatId(1001);
-			 product.setSupplierId(1001);
+			 product.setCatId(1002);
+			 product.setSupplierId(1002);
 			 assertTrue("problem in insertion",productDao.addProduct(product));
 		}
 		
-	
+	*/
 	}

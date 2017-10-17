@@ -21,12 +21,14 @@ public String getSupname() {
 public void setSupname(String supname) {
 	this.supname = supname;
 }
-public String getSupaddress() {
-	return supaddress;
+
+
+String supname,supAddress;
+public String getSupAddress() {
+	return supAddress;
 }
-public void setSupaddress(String supaddress) {
-	this.supaddress = supaddress;
+public void setSupAddress(String supAddress) {
+	this.supAddress = supAddress;
 }
-String supname,supaddress;
 
 }
