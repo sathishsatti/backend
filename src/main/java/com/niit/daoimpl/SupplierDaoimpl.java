@@ -59,10 +59,10 @@ public class SupplierDaoimpl implements SupplierDao
 	}
 
 	@Override
-	public Supplier getSupplier(int supId)
+	public Supplier getSupplier(int supplierId)
 	{
 		 Session session=sessionFactory.openSession();
-	        Supplier supplier=(Supplier)session.get(Supplier.class,supId);
+	        Supplier supplier=(Supplier)session.get(Supplier.class,supplierId);
 	        session.close();
 	        return supplier;
 	}
