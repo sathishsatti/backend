@@ -17,6 +17,8 @@ public class SupplierDaoimpl implements SupplierDao
 
 		@Autowired
 	    SessionFactory sessionFactory;
+		
+		
 	@Transactional
 	@Override
 	public boolean addSupplier(Supplier supplier)
@@ -41,7 +43,8 @@ public class SupplierDaoimpl implements SupplierDao
         session.close();
         return listsupplier;
 	}
-
+	
+	@Transactional
 	@Override
 	public boolean deleteSupplier(Supplier supplier) 
 	{

@@ -1,6 +1,7 @@
 package com.niit.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -12,11 +13,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 
     @Id
+    @GeneratedValue
     int productId;
-     
     String productName,productDesc;
     int stock,price,catId,supplierId;
-    @Transient
+    
+   
+	@Transient
     MultipartFile pimage;
      
   
@@ -69,7 +72,12 @@ public class Product {
         this.supplierId = supplierId;
     }
      
-     
+    @Override
+   	public String toString() {
+   		return "Product [productId=" + productId + ", productName=" + productName + ", productDesc=" + productDesc
+   				+ ", stock=" + stock + ", price=" + price + ", catId=" + catId + ", supplierId=" + supplierId
+   				+ ", pimage=" + pimage + "]";
+   	}
      
 }
 
