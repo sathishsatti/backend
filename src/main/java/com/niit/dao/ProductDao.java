@@ -11,6 +11,7 @@ public boolean deleteProduct(Product product);
 public List<Product>retrieveProduct();
 public boolean updateProduct(Product product);
 public Product getProduct(int productid);
+public Product getItem(int id);
 
 	
 	

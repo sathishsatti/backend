@@ -63,6 +63,14 @@ public class ProductDaoImpl implements ProductDao
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Product getItem(int id) {
+		Product product=sessionFactory.getCurrentSession().get(Product.class, id);
+
+		return null;
+	}
+
 	
 
 	

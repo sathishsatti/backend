@@ -3,6 +3,7 @@ package com.niit.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -15,20 +16,18 @@ public class Product {
     @Id
     @GeneratedValue
     int productId;
-    String productName,productDesc;
+    public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	String productName,productDesc;
     int stock,price,catId,supplierId;
-    
    
-	@Transient
-    MultipartFile pimage;
-     
-  
-	public MultipartFile getPimage() {
-		return pimage;
-	}
-	public void setPimage(MultipartFile pimage) {
-		this.pimage = pimage;
-	}
+	@Lob
+	private byte[] image;
+	
 	public int getProductId() {
         return productId;
     }
@@ -71,13 +70,6 @@ public class Product {
     public void setSupplierId(int supplierId) {
         this.supplierId = supplierId;
     }
-     
-    @Override
-   	public String toString() {
-   		return "Product [productId=" + productId + ", productName=" + productName + ", productDesc=" + productDesc
-   				+ ", stock=" + stock + ", price=" + price + ", catId=" + catId + ", supplierId=" + supplierId
-   				+ ", pimage=" + pimage + "]";
-   	}
      
 }
 
