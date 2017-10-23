@@ -17,10 +17,6 @@
   
   
   <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
-  
-  
-
-
   		
 	<dependency>
     	<groupId>org.hibernate</groupId>

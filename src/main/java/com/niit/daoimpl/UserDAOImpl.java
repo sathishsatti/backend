@@ -19,9 +19,9 @@ public class UserDAOImpl implements UserDAO {
 	this.SessionFactory=SessionFactory;
 	}
 
-	public boolean saveUser(User user) {
+	public boolean saveUser(User user)
+	{
 	
-		
 		Session session=SessionFactory.openSession();
 		session.saveOrUpdate(user);
 		Transaction tx=session.beginTransaction();
