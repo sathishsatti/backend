@@ -1,4 +1,4 @@
-
+/*
 package com.niit.test;
  
 import static org.junit.Assert.*;
@@ -96,4 +96,4 @@ public class CategoryTest
         System.out.println("Category Description  = "+category.getCatDesc());
     }
  
-}
+}*/

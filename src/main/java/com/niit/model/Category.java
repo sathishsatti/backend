@@ -1,13 +1,15 @@
 package com.niit.model;
  
 import javax.persistence.*;
+
+import org.springframework.stereotype.Component;
  
 @Entity
-@Table
+@Component
 public class Category 
 {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     int catId;
      
     String catName,catDesc;

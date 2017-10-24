@@ -2,6 +2,7 @@ package com.niit.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,31 +12,39 @@ public class Supplier {
 	
 	
 @Id
-@GeneratedValue
+@GeneratedValue(strategy=GenerationType.AUTO)
 int supplierId;
+
 String supplierName,supplierAddress;
 
-public int getSupplierId() {
-	return supplierId;
-}
 
-public void setSupplierId(int supplierId) {
-	this.supplierId = supplierId;
-}
+	public int getSupplierId()
+	{
+		return supplierId;
+	}
 
-public String getSupplierName() {
-	return supplierName;
-}
+	public void setSupplierId(int supplierId)
+	{
+		this.supplierId = supplierId;
+	}
 
-public void setSupplierName(String supplierName) {
-	this.supplierName = supplierName;
-}
+	public String getSupplierName()
+	{
+		return supplierName;
+	}
 
-public String getSupplierAddress() {
-	return supplierAddress;
-}
+	public void setSupplierName(String supplierName)
+	{
+		this.supplierName = supplierName;
+	}	
 
-public void setSupplierAddress(String supplierAddress) {
-	this.supplierAddress = supplierAddress;
-}
-}
+	public String getSupplierAddress() 
+	{
+		return supplierAddress;
+	}
+
+	public void setSupplierAddress(String supplierAddress)
+	{
+		this.supplierAddress = supplierAddress;
+	}
+	}
