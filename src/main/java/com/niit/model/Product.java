@@ -2,6 +2,7 @@ package com.niit.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -14,19 +15,24 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
+
     int productId;
+	@Lob
+	private byte[] image;
+
+	String productName,productDesc;
+    int stock,price,catId,supplierId;
+    
+    
     public byte[] getImage() {
 		return image;
 	}
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-	String productName,productDesc;
-    int stock,price,catId,supplierId;
    
-	@Lob
-	private byte[] image;
+
 	
 	public int getProductId() {
         return productId;

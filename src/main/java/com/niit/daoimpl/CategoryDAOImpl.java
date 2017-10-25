@@ -49,6 +49,7 @@ public class CategoryDAOImpl implements CategoryDAO
     }
     
     
+    
     @Transactional
     public List<Category> retrieveCategory() 
     {
