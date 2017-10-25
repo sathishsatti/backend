@@ -65,10 +65,13 @@ public class ProductDaoImpl implements ProductDao
 	        return listProduct;
 
 	}
+
+    
     @Transactional
 	@Override
-	public boolean updateProduct(Product product) {
-		// TODO Auto-generated method stub
+	public boolean updateProduct(Product product) 
+    {
+		
 		 try
 	        {
 	        sessionFactory.getCurrentSession().saveOrUpdate(product);
