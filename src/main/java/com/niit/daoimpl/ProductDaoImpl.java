@@ -67,6 +67,19 @@ public class ProductDaoImpl implements ProductDao
 	}
 
     
+
+    @Transactional
+	@Override
+	public Product deleteProduct(int productId) 
+	{
+    		Product ProductToDelete = new Product();
+    		ProductToDelete.setProductId(productId);
+			sessionFactory.getCurrentSession().delete(ProductToDelete);
+			return ProductToDelete;
+		
+	}
+	
+    
     @Transactional
 	@Override
 	public boolean updateProduct(Product product) 
@@ -85,9 +98,12 @@ public class ProductDaoImpl implements ProductDao
 	    
 	
 	}
+
+    
     @Transactional
 	@Override
-	public Product getProduct(int productid) {
+	public Product getProduct(int productid)
+    {
 		// TODO Auto-generated method stub
 		String hql = "from"+" Product"+" where id=" + productid;
 		@SuppressWarnings("rawtypes")
@@ -113,17 +129,6 @@ public class ProductDaoImpl implements ProductDao
 		return null;
 	}
 	
-	
-@Transactional
-	@Override
-	public Product deleteProduct(int productId) 
-	{
-		Product ProductToDelete = new Product();
-		ProductToDelete.setProductId(productId);
-			sessionFactory.getCurrentSession().delete(ProductToDelete);
-			return ProductToDelete;
-		
-	}
 	
 
 	
