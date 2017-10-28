@@ -12,6 +12,8 @@ public class Cart
 	@Id
 	int cartId;
 	private int productId,userId,subTotal,price,productQuantity;
+	
+	
 	public int getCartId() {
 		return cartId;
 	}

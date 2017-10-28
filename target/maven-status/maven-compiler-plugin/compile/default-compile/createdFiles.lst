@@ -5,9 +5,12 @@ com\niit\model\Product.class
 com\niit\model\Supplier.class
 com\niit\daoimpl\SupplierDaoimpl.class
 com\niit\dao\SupplierDao.class
+com\niit\daoimpl\CartDAOImpl.class
 com\niit\model\Category.class
 com\niit\dao\ProductDao.class
 com\niit\daoimpl\CategoryDAOImpl.class
 com\niit\daoimpl\UserDAOImpl.class
+com\niit\model\Cart.class
 com\niit\daoimpl\ProductDaoImpl.class
+com\niit\dao\CartDAO.class
 com\niit\dao\CategoryDAO.class

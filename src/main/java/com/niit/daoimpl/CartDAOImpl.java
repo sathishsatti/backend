@@ -26,6 +26,7 @@ public class CartDAOImpl implements CartDAO
 
 
 	@Transactional
+	
 	public boolean saveProductToCart(Cart cart) {
 		sessionFactory.getCurrentSession().saveOrUpdate(cart);
 		return true;
@@ -33,7 +34,8 @@ public class CartDAOImpl implements CartDAO
 
 	
 	@Transactional
-	public Cart getitem(int prodId, int userId) {
+	public Cart getitem(int prodId, int userId)
+	{
 		String hql = "from"+" Cart"+" where userid="+userId+" and productid="+prodId;
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -47,14 +49,16 @@ public class CartDAOImpl implements CartDAO
 
 	@SuppressWarnings("unchecked")
 	@Transactional
-	public List<Cart> listCart() {
+	public List<Cart> listCart() 
+	{
 		
 		List<Cart> cartList= sessionFactory.getCurrentSession().createQuery("from Cart").list();
 		return cartList;
 	}
 
 @Transactional
-	public boolean removeCartById(int cart_id) {
+	public boolean removeCartById(int cart_id)
+{
 	 Object persistentInstance =sessionFactory.getCurrentSession().load(Cart.class, cart_id);
 	    if (persistentInstance != null) {
 	    	sessionFactory.getCurrentSession().delete(persistentInstance);
@@ -66,26 +70,16 @@ public class CartDAOImpl implements CartDAO
 
 @SuppressWarnings("deprecation")
 @Transactional
-public long cartsize(int userId) {
+public long cartsize(int userId) 
+{
 	Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
 	c.add(Restrictions.eq("userId", userId));
-	c.add(Restrictions.eq("status","C"));
+//	c.add(Restrictions.eq("status","C"));
 	c.setProjection(Projections.count("userId"));
 	long count= (Long) c.uniqueResult();
 	return count;
 }
 
-
-@SuppressWarnings("deprecation")
-@Transactional
-public double CartPrice(int userId) {
-	Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
-	c.add(Restrictions.eq("userId", userId));
-	c.add(Restrictions.eq("status","C"));
-	c.setProjection(Projections.sum("subTotal"));
-	double l=  (Double) c.uniqueResult();
-	return l;
-}
 
 @Transactional
 public Cart editCartById(int cart_id) {
@@ -110,6 +104,13 @@ public Cart getCartById(int cart_id) {
 	}
 	
 	return null;
+}
+
+
+@Override
+public double CartPrice(int userId) {
+	// TODO Auto-generated method stub
+	return 0;
 }
 
 }
