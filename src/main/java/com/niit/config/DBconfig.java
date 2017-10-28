@@ -12,8 +12,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
+import com.niit.dao.CartDAO;
 import com.niit.dao.UserDAO;
+import com.niit.daoimpl.CartDAOImpl;
 import com.niit.daoimpl.UserDAOImpl;
 
 
@@ -67,12 +68,20 @@ public class DBconfig
 			System.out.println("Transaction");
 			return transactionManager;
 		}
+		
 	@Autowired
 	@Bean(name = "userDAO")
 	public UserDAO getUserDAO(SessionFactory sessionFactory)
 	{
 
 		return new UserDAOImpl(sessionFactory);
+	}
+	@Autowired
+	@Bean(name = "cartDAO")
+	public CartDAO getCartDAO(SessionFactory sessionFactory)
+	{
+
+		return new CartDAOImpl(sessionFactory);
 	}
 	
 	

@@ -23,6 +23,7 @@ public class UserDAOImpl implements UserDAO
 	
 	public UserDAOImpl(SessionFactory SessionFactory) {
 	this.sessionFactory=sessionFactory;
+	
 	}
 
 	public boolean saveUser(User user)
