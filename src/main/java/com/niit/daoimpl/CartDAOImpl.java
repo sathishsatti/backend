@@ -24,6 +24,7 @@ public class CartDAOImpl implements CartDAO
 		this.sessionFactory = sessionFactory;
 	}
 
+	
 
 	@Transactional
 	
@@ -32,6 +33,12 @@ public class CartDAOImpl implements CartDAO
 		return true;
 	}
 
+	
+	
+	
+	
+	
+	
 	
 	@Transactional
 	public Cart getitem(int prodId, int userId)
@@ -47,6 +54,9 @@ public class CartDAOImpl implements CartDAO
 		return null;
 	}
 
+	
+	
+	
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Cart> listCart() 
@@ -55,8 +65,12 @@ public class CartDAOImpl implements CartDAO
 		List<Cart> cartList= sessionFactory.getCurrentSession().createQuery("from Cart").list();
 		return cartList;
 	}
-
-@Transactional
+	
+	
+	
+	
+	
+	@Transactional
 	public boolean removeCartById(int cart_id)
 {
 	 Object persistentInstance =sessionFactory.getCurrentSession().load(Cart.class, cart_id);
@@ -68,9 +82,13 @@ public class CartDAOImpl implements CartDAO
 	}
 
 
-@SuppressWarnings("deprecation")
-@Transactional
-public long cartsize(int userId) 
+
+
+
+
+	@SuppressWarnings("deprecation")
+	@Transactional
+	public long cartsize(int userId) 
 {
 	Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
 	c.add(Restrictions.eq("userId", userId));
@@ -81,17 +99,25 @@ public long cartsize(int userId)
 }
 
 
-@Transactional
-public Cart editCartById(int cart_id) {
+
+
+
+
+
+	@Transactional
+	public Cart editCartById(int cart_id) {
 	
-Cart cart=	sessionFactory.getCurrentSession().get(Cart.class,cart_id);
+		Cart cart=	sessionFactory.getCurrentSession().get(Cart.class,cart_id);
 	
 	return cart;
 }
 
-@SuppressWarnings({ "unchecked", "rawtypes" })
-@Transactional
-public Cart getCartById(int cart_id) {
+
+
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Transactional
+	public Cart getCartById(int cart_id) {
 	String hql = "from"+" Cart"+" where id=" + cart_id;
 
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -107,10 +133,47 @@ public Cart getCartById(int cart_id) {
 }
 
 
-@Override
-public double CartPrice(int userId) {
-	// TODO Auto-generated method stub
-	return 0;
-}
+
+
+	
+
+
+	@Override
+	public double CartPrice(int userId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	
+		@SuppressWarnings("unchecked")
+		@Transactional
+		public List<Cart> listCartbyUserId(int userId) {
+			String hql = "from"+" Cart"+" where userId=" + userId;
+
+			List<Cart> lCart = sessionFactory.getCurrentSession().createQuery(hql).list();
+			return lCart;
+	
+	}
+
+
+
+
+
+
+
+	/*@Transactional
+	@Override
+	public double CartPrice(int userId) {
+	Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
+	c.add(Restrictions.eq("userId", userId));
+	//c.add(Restrictions.eq("status","C"));
+	c.setProjection(Projections.sum("subTotal"));
+	double l=  (Double) c.uniqueResult();
+	return l;
+	*/
+
 
 }
