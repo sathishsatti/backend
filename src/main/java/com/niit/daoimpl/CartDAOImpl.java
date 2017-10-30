@@ -138,11 +138,7 @@ public class CartDAOImpl implements CartDAO
 	
 
 
-	@Override
-	public double CartPrice(int userId) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 
 
@@ -163,8 +159,7 @@ public class CartDAOImpl implements CartDAO
 
 
 
-
-	/*@Transactional
+	@Transactional
 	@Override
 	public double CartPrice(int userId) {
 	Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
@@ -173,7 +168,7 @@ public class CartDAOImpl implements CartDAO
 	c.setProjection(Projections.sum("subTotal"));
 	double l=  (Double) c.uniqueResult();
 	return l;
-	*/
+	}
 
 
 }

@@ -11,8 +11,8 @@ public class Cart
 	@GeneratedValue
 	@Id
 	int cartId;
-	private int productId,userId,subTotal,price,productQuantity;
-	
+	private int productId,userId,price,productQuantity;
+	private double subTotal;
 	
 	public int getCartId() {
 		return cartId;
@@ -32,10 +32,10 @@ public class Cart
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public int getSubTotal() {
+	public double getSubTotal() {
 		return subTotal;
 	}
-	public void setSubTotal(int subTotal) {
+	public void setSubTotal(double subTotal) {
 		this.subTotal = subTotal;
 	}
 	public int getPrice() {
