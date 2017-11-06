@@ -12,8 +12,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.AddressDAO;
 import com.niit.dao.CartDAO;
 import com.niit.dao.UserDAO;
+import com.niit.daoimpl.AddressDAOImpl;
 import com.niit.daoimpl.CartDAOImpl;
 import com.niit.daoimpl.UserDAOImpl;
 
@@ -27,7 +29,8 @@ public class DBconfig
 {
 	
 	 @Bean(name = "dataSource")
-		public DataSource getDataSource() {
+		public DataSource getDataSource() 
+	 {
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("org.h2.Driver");
 			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
@@ -38,7 +41,8 @@ public class DBconfig
 
 		}
 
-		private Properties getHibernateProperties() {
+		private Properties getHibernateProperties() 
+		{
 			Properties properties = new Properties();
 			properties.put("hibernate.show_sql", "true");
 			properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
@@ -51,7 +55,8 @@ public class DBconfig
 
 		@Autowired
 		@Bean(name = "sessionFactory")
-		public SessionFactory getSessionFactory(DataSource dataSource) {
+		public SessionFactory getSessionFactory(DataSource dataSource)
+		{
 			LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 			sessionBuilder.addProperties(getHibernateProperties());
 			sessionBuilder.scanPackages("com.niit");
@@ -63,7 +68,8 @@ public class DBconfig
 
 		@Autowired
 		@Bean(name = "transactionManager")
-		public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+		public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
+		{
 			HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 			System.out.println("Transaction");
 			return transactionManager;
@@ -76,6 +82,9 @@ public class DBconfig
 
 		return new UserDAOImpl(sessionFactory);
 	}
+	
+	
+	
 	@Autowired
 	@Bean(name = "cartDAO")
 	public CartDAO getCartDAO(SessionFactory sessionFactory)
@@ -85,6 +94,12 @@ public class DBconfig
 	}
 	
 	
+	@Autowired
+	@Bean(name = "addressDAO")
+	public AddressDAO getAddressDAO(SessionFactory sessionFactory)
+	{
 
+		return new AddressDAOImpl(sessionFactory);
+	}
 	}
 
