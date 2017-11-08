@@ -1,6 +1,8 @@
 package com.niit.model;
  
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
  
@@ -12,7 +14,14 @@ public class Category
     @GeneratedValue(strategy=GenerationType.AUTO)
     int catId;
      
-    String catName,catDesc;
+
+	@NotNull(message="please enter the username")
+	@Size(min=5,max=10)
+    String catName;
+	
+	
+	
+    String catDesc;
  
     public int getCatId() {
         return catId;
